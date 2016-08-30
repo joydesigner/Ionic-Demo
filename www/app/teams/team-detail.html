@@ -1,7 +1,22 @@
-<ion-view ng-controller="TeamDetailController">
+<ion-view ng-controller="TeamDetailController as vm" title="{{vm.teamName}}">
   <ion-content class="has-header">
-    <h1>
-      Team Detail
-    </h1>
+    <div class="list">
+      <a href="#" ng-repeat="game in vm.games" ui-sref="app.game({ id: game.gameId })" class="item item-icon-right">
+        <!--{{game.opponent}} {{game.scoreDisplay}}-->
+        <div class="row">
+          <div class="col-20 col-center">
+            <p>{{game.time | date: 'M/d/yy'}}</p>
+            <p>{{game.time | date: 'shortTime'}}</p>
+          </div>
+          <div class="col col-center">
+            <h3>{{game.homeAway}} {{game.opponent}}</h3>
+          </div>
+          <div class="col-20 col-center">
+            <h4 class="positive">{{game.scoreDisplay}}</h4>
+          </div>
+        </div>
+        <i class="icon icon-chevron-right icon-accessory"></i>
+      </a>
+    </div>
   </ion-content>
 </ion-view>
