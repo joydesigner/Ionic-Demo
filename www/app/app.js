@@ -49,6 +49,7 @@
         })
         .state('app.teams', {
           url: '/teams',
+          cache: false,
           views: {
             'mainContent': {
               templateUrl: 'app/teams/teams.html'
@@ -73,6 +74,7 @@
         })
         .state('app.standings', {
           url: '/standings',
+          cache: false,
           views: {
             'mainContent': {
               templateUrl: 'app/standings/standings.html'
