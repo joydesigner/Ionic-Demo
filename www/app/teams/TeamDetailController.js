@@ -22,7 +22,9 @@
 
       var divisionTeams = teams.divisionTeams;
       var team = lodash.find(divisionTeams,{"id": vm.teamId});
-      vm.teamName = team.name;
+      if(team) {
+        vm.teamName = team.name;
+      }
       vm.games = lodash.chain(data.games)
         .filter(isTeamInGame)
         .map(function (item) {

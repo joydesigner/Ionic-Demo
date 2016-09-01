@@ -65,7 +65,7 @@
           }
         })
         .state('app.game', {
-          url: '/game',
+          url: '/game/:id',
           views: {
             'mainContent': {
               templateUrl: 'app/game/game.html'
