@@ -56,6 +56,11 @@
           .find({'teamId': vm.teamId})
           .value();
       }
+
+      vm.following = false;
+      vm.toggleFollow = function () {
+        vm.following = !vm.following;
+      };
       // vm.divisionStandings = standings.divisionStandings;
       function isTeamInGame(item) {
         return item.team1Id === vm.teamId || item.team2Id === vm.teamId;
