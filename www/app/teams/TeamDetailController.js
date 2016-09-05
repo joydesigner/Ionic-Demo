@@ -42,6 +42,21 @@
           };
         })
         .value();
+
+      var standings = lodash.chain(data.standings)
+        .flatten(data.standings)
+        .find('divisionStandings',{ 'teamId': vm.teamId })
+        .value();
+      console.log(standings);
+
+      vm.teamStanding = null;
+      if(standings && standings.divisionStandings.length) {
+        vm.teamStanding = lodash.chain(standings.divisionStandings)
+          .flatten(standings.divisionStandings)
+          .find({'teamId': vm.teamId})
+          .value();
+      }
+      // vm.divisionStandings = standings.divisionStandings;
       function isTeamInGame(item) {
         return item.team1Id === vm.teamId || item.team2Id === vm.teamId;
       }
