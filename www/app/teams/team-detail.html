@@ -1,8 +1,25 @@
 <ion-view ng-controller="TeamDetailController as vm" title="{{vm.teamName}}">
   <ion-content class="has-header">
     <div class="card">
-      <div class="item">
-        <h2>Record: {{vm.teamStanding.wins}} - {{vm.teamStanding.losses}}</h2>
+      <!--<div class="item">-->
+        <!--<h2>Record: {{vm.teamStanding.wins}} - {{vm.teamStanding.losses}}</h2>-->
+      <!--</div>-->
+
+      <!--<div class="item item-checkbox">-->
+        <!--<h2>{{vm.following ? "following" : "Not following"}}</h2>-->
+        <!--<label for="followingCheck" class="checkbox">-->
+          <!--<input type="checkbox" ng-model="vm.following" id="followingCheck">-->
+        <!--</label>-->
+      <!--</div>-->
+
+      <div class="item item-toggle">
+        <h2>{{vm.following ? "following" : "Not following"}}</h2>
+        <label for="followingCheck" class="toggle toggle-small">
+          <input type="checkbox" ng-model="vm.following" id="followingCheck">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
       </div>
     </div>
     <div class="list">
